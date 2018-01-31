@@ -35,7 +35,8 @@ function sub(L, start, len) {
 	/** Fill in here **/
 	if(!L || !(L instanceof List)){
 		throw new Error('参数错误')
-  } 
+  }
+  // 方案1：:
   var temp = L,res = [],end = start + len;
   var i = 0;//下标
   while( temp !== null && i < end ) {
@@ -47,5 +48,18 @@ function sub(L, start, len) {
   }
   return List.list(res)
 
+  // 方案2：
+ //  var arr = [], newArr = [];
+	// while (L.tail !== null){
+	// 	arr.push(L.head)
+	// 	L = L.tail;
+	// }
+	// arr.push(L.head)
+	// newArr = arr.splice(start, len);
+	// return List.list(newArr)
+
+
+
+			
 
 }
